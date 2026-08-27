@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Consorcio CRM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span>◈</span> Consórcio CRM</div>
+    <nav>
+      <button class="active">▦ Dashboard</button>
+      <button>◎ Leads</button>
+      <button>⇄ Pipeline</button>
+      <button>◷ Follow-ups</button>
+      <button>▣ Propostas</button>
+      <button>◫ Relatórios</button>
+    </nav>
+    <div class="user">👤 <div><strong>Vendedor</strong><small>Equipe comercial</small></div></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">VISÃO GERAL</p><h1>Dashboard</h1><p class="muted">Acompanhe seus leads e oportunidades.</p></div><button class="primary" onclick="openModal()">+ Novo lead</button></header>
+    <section class="cards">
+      <article><span>Leads</span><strong id="leadCount">128</strong><em>+12% este mês</em></article>
+      <article><span>Em negociação</span><strong>34</strong><em>8 propostas abertas</em></article>
+      <article><span>Vendas</span><strong>R$ 284 mil</strong><em>+18% este mês</em></article>
+      <article><span>Conversão</span><strong>12,8%</strong><em>+2,1 p.p.</em></article>
+    </section>
+    <section class="grid">
+      <div class="panel pipeline"><div class="panel-title"><div><h2>Pipeline de vendas</h2><p class="muted">Oportunidades por etapa</p></div><button class="ghost">Ver pipeline →</button></div>
+        <div class="kanban">
+          <div><h3>Novo lead <b>12</b></h3><div class="deal"><strong>Mariana Silva</strong><small>Meta Ads • Consórcio Auto</small><span>R$ 80.000</span></div><div class="deal"><strong>Lucas Almeida</strong><small>Instagram • Imóveis</small><span>R$ 250.000</span></div></div>
+          <div><h3>Contato feito <b>8</b></h3><div class="deal"><strong>Rafael Costa</strong><small>Google Ads • Auto</small><span>R$ 120.000</span></div></div>
+          <div><h3>Proposta <b>6</b></h3><div class="deal"><strong>Beatriz Souza</strong><small>Facebook • Imóveis</small><span>R$ 300.000</span></div></div>
+          <div><h3>Fechamento <b>3</b></h3><div class="deal"><strong>João Santos</strong><small>Indicação • Moto</small><span>R$ 45.000</span></div></div>
+        </div>
+      </div>
+      <div class="panel"><div class="panel-title"><div><h2>Leads recentes</h2><p class="muted">Origem do anúncio vem do lead</p></div><button class="ghost">Ver todos →</button></div>
+        <div id="leads"><div class="lead-row"><div class="avatar">MS</div><div><strong>Mariana Silva</strong><small>Meta Ads · Auto · Hoje</small></div><b class="tag hot">Novo</b></div><div class="lead-row"><div class="avatar">LA</div><div><strong>Lucas Almeida</strong><small>Instagram Ads · Imóveis · Hoje</small></div><b class="tag">Contato</b></div><div class="lead-row"><div class="avatar">RC</div><div><strong>Rafael Costa</strong><small>Google Ads · Auto · Ontem</small></div><b class="tag">Negociação</b></div></div>
+      </div>
+    </section>
+    <section class="panel sources"><div class="panel-title"><div><h2>Performance por origem</h2><p class="muted">Atribuição baseada na origem informada pelo lead</p></div></div><div class="source-grid"><div><strong>Meta Ads</strong><span>62 leads</span><b>14,5%</b></div><div><strong>Instagram Ads</strong><span>31 leads</span><b>12,9%</b></div><div><strong>Google Ads</strong><span>21 leads</span><b>11,8%</b></div><div><strong>Indicação</strong><span>14 leads</span><b>21,4%</b></div></div></section>
+  </main>
+  <dialog id="modal"><form method="dialog" onsubmit="addLead(event)"><h2>Novo lead</h2><input id="name" placeholder="Nome completo" required><input id="phone" placeholder="WhatsApp"><select id="source"><option>Meta Ads</option><option>Instagram Ads</option><option>Google Ads</option><option>Indicação</option><option>Orgânico</option></select><select><option>Consórcio Auto</option><option>Consórcio Imóveis</option><option>Consórcio Moto</option><option>Consórcio Serviços</option></select><div class="actions"><button type="button" class="ghost" onclick="modal.close()">Cancelar</button><button class="primary">Criar lead</button></div></form></dialog>
+  <script src="app.js"></script>
+</body></html>
