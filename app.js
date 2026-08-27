@@ -1,0 +1,3 @@
+const modal=document.getElementById('modal');
+function openModal(){modal.showModal()}
+function addLead(e){e.preventDefault();const name=document.getElementById('name').value.trim();const source=document.getElementById('source').value;const initials=name.split(' ').slice(0,2).map(x=>x[0]).join('').toUpperCase();const row=document.createElement('div');row.className='lead-row';row.innerHTML=`<div class="avatar">${initials}</div><div><strong>${name}</strong><small>${source} · Novo · agora</small></div><b class="tag hot">Novo</b>`;document.getElementById('leads').prepend(row);const count=document.getElementById('leadCount');count.textContent=Number(count.textContent)+1;modal.close();e.target.reset()}
